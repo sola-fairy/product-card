@@ -1,179 +1,141 @@
+:root {
+  --light-green: hsl(158, 36%, 37%);
+  --dark-green: hsl(158, 42%, 18%);
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+}
 
-  body {
-    background: hsl(30, 38%, 92%);
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    font-size: 0.875rem;
-    font-family: 'Montserrat', sans-serif;
-    color: hsl(212, 21%, 14%);
-  }  
-  
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--cream);
+  min-height: 100vh;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  max-width: 40rem;
+  max-height: 31.25rem;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+picture {
+  min-width: 30em;
+  height: auto;
+  flex: 1;
+  background-image: url(https://raw.githubusercontent.com/sola-fairy/product-card/refs/heads/main/images/image-product-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  background-color: var(--white);
+  padding: 2.857em;
+  min-height: 0;
+}
+
+.product-type {
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 5px;
+  color: var(--grey);
+}
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 3em;
+  margin: 1rem 0;
+}
+
+p {
+  color: var(--grey);
+  line-height: 160%;
+  font-size: 1.2em;
+  margin: 1rem 0;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.current {
+  color: var(--light-green);
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 3em;
+}
+
+.previous {
+  color: var(--grey);
+  text-decoration: line-through;
+  margin-left: 15px;
+}
+
+button {
+  background-color: var(--light-green);
+  color: var(--white);
+  border: none;
+  border-radius: 15px;
+  padding: 0.714em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+button img {
+  width: 20px;
+  overflow: visible;
+  margin-right: 10px;
+}
+
+button:hover {
+    background-color: var(--dark-green);
+  }
+
+footer {
+  margin-top: 5px;
+
+  a {
+    color: var(--grey);
+  }
+  a:hover {
+    color: var(--dark-green);
+  }
+}
+
+@media (max-width: 800px) {
   main {
-    background: hsl(0, 0%, 100%);
-    display: flex;
     flex-direction: column;
-    margin-left: 15px;
-    margin-right: 15px;
-    border-radius: 10px;
-    top: 0;
-    position: absolute;
-    anchor-name: --anchor;
+    max-height: none;
+    margin: 5em 0 1em;
+    max-width: 32.143em;
   }
-  
-  main img {
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-  }
-  
-  section {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: .8rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-  }
-
-  p {
-    font-weight: 400;
-    letter-spacing: 0.2px;
-    line-height: 140%;
-    font-size: .8rem;
-  }
-
-  .price {
-    display: flex;
-    align-items: center;
-    
-
-    .current {
-      font-family: 'Fraunces', serif;
-      color: hsl(158, 36%, 37%);
-      font-size: 1.6rem;
-      font-weight: 700;
-
-    }
-
-    .previous {
-    color: hsl(212, 21%, 14%);
-    margin-left: 20px;
-    font-size: .8rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    vertical-align: 50%;
-    text-decoration: line-through;
-    }
-  }
-
-  button {
-    background-color:hsl(158, 36%, 37%);
-    width: 100%;
-    border: none;
-    border-radius: 15px;
-    color:hsl(0, 0%, 100%);
-    font-size: 1rem;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-    padding: 20px;
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  button:hover {
-    background-color: hsl(158, 42%, 18%);
-  }
-
-  footer { 
-    font-size: 0.625rem; 
-    text-align: center; 
-    position: absolute;
-    position-anchor: --anchor;
-    top: anchor(bottom);
-  }
-
-  footer a { 
-      color: hsl(228, 45%, 44%); 
-  }
-
-  @media (min-width:320px) and (max-width:500px) {
-    main {
-        width: 90vw;
-    }
-  }
-
-@media (min-width:600px) and (max-width:1000px) {
-  main {
-    width: 50vw;
-  }
-  
   picture {
-    display: flex;
-    flex: 1;
-  }  
-
-  section {
-    display: flex;
-    flex-direction: column;
+    background-image: url(https://raw.githubusercontent.com/sola-fairy/product-card/refs/heads/main/images/image-product-mobile.jpg);
+    min-height: 30em;
   }
-  }
-
-@media (min-width:1000px) {
-    body {
-        justify-content: normal;
-    }
-
-    main {
-        flex-direction: row;
-        margin:auto;
-        width: 50%;
-        top: 10%;
-        align-items: center;
-        height: 60vh;
-    }
-
-    main img {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 10px;
-        object-fit: cover;
-    }
-
-    picture {
-        flex: 1;
-        display: flex;
-        height: inherit;
-    }
-
-    section {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding: 0px 40px;
-        height: inherit;
-        overflow: hidden;
-        justify-content: space-evenly;
-    }
-
-    footer {
-        margin-top: 25px;
-    }
-  }
+}
